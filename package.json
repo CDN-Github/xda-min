@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^5.0.1",
+    "cheerio": "^1.0.0-rc.10",
     "hyttpo": "^0.2.6",
-    "js-beautify": "^1.14.0"
+    "js-beautify": "^1.14.0",
+    "octokit-commit-multiple-files": "^4.0.0"
   }
 }
