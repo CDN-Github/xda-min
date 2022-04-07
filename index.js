@@ -93,7 +93,7 @@ const error = (msg) => console.log(`${chalk.bgRed(` ERR `)} ${msg}`);
     const content = await octokit.rest.repos.getContent({
         owner: "xHyroM",
         repo: "discord-assets",
-        path: `website/data/builds.json`,
+        path: `packages/site/src/_data/builds.json`,
     })
 
     let buildsData = JSON.parse(Buffer.from(content.data.content, 'base64').toString('utf-8'));
@@ -108,7 +108,7 @@ const error = (msg) => console.log(`${chalk.bgRed(` ERR `)} ${msg}`);
     await octokit.rest.repos.createOrUpdateFileContents({
         owner: "xHyroM",
         repo: "discord-assets",
-        path: `website/data/builds.json`,
+        path: `packages/site/src/_data/builds.json`,
         message: `${(date.getFullYear()).pad()}/${(date.getMonth() + 1).pad()}/${(date.getDate()).pad()} | Build ${version.hash}`,
         sha: content.data.sha,
         content: Buffer.from(JSON.stringify(buildsData)).toString('base64'),
